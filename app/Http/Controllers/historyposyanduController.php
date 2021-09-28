@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class historyposyanduController extends Controller
+class historyPosyanduController extends Controller
 {
     public function index(){
 
-        // mengambil data dari table historyposyandu
-        $historyposyandu = DB::table('historyposyandu')->get();
+        // mengambil data dari table history_posyandu
+        $historyPosyandu = DB::table('history_posyandu')->get();
 
         // mengirim data history posyandu ke view index
-        return view('index',['historyposyandu' => $historyposyandu]);
+        return view('index',['history_posyandu' => $historyPosyandu]);
 
     }
 }

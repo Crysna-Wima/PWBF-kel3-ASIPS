@@ -9,11 +9,11 @@ class userRoleController extends Controller
 {
     public function index(){
 
-        // mengambil data dari table userRole
-        $userRole = DB::table('userRole')->get();
+        // mengambil data dari table user_role
+        $userRole = DB::table('user_role')->get();
 
-        // mengirim data userRole ke view index
-        return view('index',['userRole' => $userRole]);
+        // mengirim data user role ke view index
+        return view('index',['user_role' => $userRole]);
 
     }
 }
