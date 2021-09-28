@@ -19,4 +19,8 @@ use App\Http\Controllers\kecamatanController;
 // });
 Route::get('/', 'App\Http\Controllers\kecamatanController@index');
 
+Route::get('/', 'App\Http\Controllers\kelurahanController@index');
 
+Route::get('/', 'App\Http\Controllers\posyanduController@index');
+
+Route::get('/', 'App\Http\Controllers\balitaController@index');
