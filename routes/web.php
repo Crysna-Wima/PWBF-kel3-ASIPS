@@ -24,3 +24,11 @@ Route::get('/', 'App\Http\Controllers\kelurahanController@index');
 Route::get('/', 'App\Http\Controllers\posyanduController@index');
 
 Route::get('/', 'App\Http\Controllers\balitaController@index');
+
+Route::get('/', 'App\Http\Controllers\historyPosyanduController@index');
+
+Route::get('/', 'App\Http\Controllers\userController@index');
+
+Route::get('/', 'App\Http\Controllers\userRoleController@index');
+
+Route::get('/', 'App\Http\Controllers\roleController@index');
