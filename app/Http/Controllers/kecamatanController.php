@@ -12,10 +12,7 @@ class kecamatanController extends Controller
         // $kecamatan = kecamatan::all();
         // return view('index',compact('kecamatan'));
 
-        // mengambil data dari table tbl_siswa
         $kecamatan = DB::table('kecamatan')->get();
-
-        // mengirim data siswa ke view index
         return view('index',['kecamatan' => $kecamatan]);
 
     }
