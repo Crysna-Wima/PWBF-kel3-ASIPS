@@ -14,10 +14,13 @@ use App\Http\Controllers\kecamatanController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-Route::get('/', 'App\Http\Controllers\kecamatanController@index');
+Route::get('/', function () {
+    return view('home');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+// Route::get('/', 'App\Http\Controllers\kecamatanController@index');
 
 // Route::get('/', 'App\Http\Controllers\kelurahanController@index');
 
