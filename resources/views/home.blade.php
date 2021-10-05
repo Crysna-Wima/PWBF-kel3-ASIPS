@@ -49,7 +49,7 @@
                 <img src="assets/img/slides/1.jpg" alt="" />
                 <div class="flex-caption container">
                     <h3>ASIPS</h3> 
-					<p>PANTAU BUAH HATI ANDA SELALU</p>  
+					<p>PANTAU BUAH HATI ANDA SELALU,AGAR TERHIDAR DARI STUNTING</p>  
                 </div>
               </li>
               <li>
