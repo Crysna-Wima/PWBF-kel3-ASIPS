@@ -16,20 +16,16 @@
 				<input type="hidden" name="id" value="{{ $p->ID_POSYANDU }}"> <br/>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">ID Kelurahan</label>
-					<input type="number" class="form-control" name="kelurahan" required="required" placeholder="1" value="{{ $p->ID_KELURAHAN }}">
+					<input type="number" class="form-control" name="kelurahan" required="required" placeholder="1" value="{{ $p->ID_KELURAHAN }}" max="{{ $jumlah }}" min="1">
 				</div>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">Nama Posyandu</label>
-					<input type="text" name="nama" class="form-control" required="required" placeholder="Alamat Posyandu" value="{{ $p->NAMA_POSYANDU }}">
+					<input type="text" name="nama" class="form-control" required="required" placeholder="Alamat Posyandu" value="{{ $p->NAMA_POSYANDU }}" maxlength="50">
 				</div>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">Alamat Posyandu</label>
-					<textarea name="alamat" class="form-control" required="required" placeholder="Kelurahan" value="{{ $p->ALAMAT_POSYANDU }}"></textarea>
+					<textarea name="alamat" class="form-control" required="required" placeholder="Kelurahan" value="{{ $p->ALAMAT_POSYANDU }}" maxlength="300"></textarea>
 				</div>
-				<div class="mb-3">
-					<label for="formGroupExampleInput" class="form-label">Updated AT</label>
-					<input type="datetime-local" class="form-control" name="updated" required="required" value="{{ $p->UPDATED_AT }}">
-				</div>               
 				<div class="modal-footer">
 					<a href="/posyandu" class="btn btn-secondary">Kembali</a>
 					<input type="submit" class="btn btn-primary" value="Simpan Data">

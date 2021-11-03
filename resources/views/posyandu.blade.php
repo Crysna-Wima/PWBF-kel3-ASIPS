@@ -1,6 +1,55 @@
 @extends('layout.tables')
 @section('tables')
 <h1 class="h3 mb-2 text-gray-800">Tables Posyandu</h1>
+@if (session()->has('tambah'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('tambah') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if (session()->has('edit'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('edit') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if (session()->has('hapus'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('hapus') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+<!--Tambah Posyandu modal-->
+<div class="modal fade" id="tambahPosyandu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tambah Posyandu</h5>
+        </div>
+        <div class="modal-body">
+            <form action="/posyandu/store" method="post">
+                {{ csrf_field() }}
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">ID Kelurahan</label>
+                    <input type="number" class="form-control" name="kelurahan" required="required" placeholder="1" max="{{ $jumlah }}" min="1">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Nama Posyandu</label>
+                    <input type="text" class="form-control" name="nama" required="required" placeholder="Nama Posyandu" maxlength="50">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Alamat Posyandu</label>
+                    <textarea class="form-control" name="alamat" required="required" placeholder="Alamat Posyandu" maxlength="300"></textarea>
+                </div>            
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Simpan Data">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -32,7 +81,7 @@
                                             <td>{{ $item->UPDATED_AT }}</td>
                                             <td>
                                                 <a href="/posyandu/edit/{{ $item->ID_POSYANDU }}"> <img src="assets/img/edit.svg" alt="edit" style="max-width: 27%;"></a> |
-                                                <a href="#"> <img src="assets/img/delete.svg" alt="hapus" style="max-width: 25%;"></a>
+                                                <a href="/posyandu/hapus/{{ $item->ID_POSYANDU }}" onclick="return confirm('Apakah anda ingin menghapusnya?')"> <img src="assets/img/delete.svg" alt="hapus" style="max-width: 25%;"></a>
                                             </td>                                         
                                         </tr>
                                         @endforeach                                       

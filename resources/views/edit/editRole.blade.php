@@ -16,7 +16,7 @@
 				<input type="hidden" name="id" value="{{ $p->ID_ROLE }}"> <br/>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">Nama Role</label>
-					<input type="text" class="form-control" name="role" required="required" placeholder="Nama Role" value="{{ $p->ROLE }}">
+					<input type="text" class="form-control" name="role" required="required" placeholder="Nama Role" value="{{ $p->ROLE }}" maxlength="20">
 				</div>
 				<div class="modal-footer">
 					<a href="/role" class="btn btn-secondary">Kembali</a>

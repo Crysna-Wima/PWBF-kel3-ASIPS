@@ -10,7 +10,7 @@ class roleController extends Controller
     public function index(){
 
         // mengambil data dari table role
-        $role = DB::table('role')->get();
+        $role = DB::table('role')->where('DELETED_AT',null)->get();
 
         // mengirim data role ke view index
         return view('role',['role' => $role]);
@@ -22,10 +22,13 @@ class roleController extends Controller
     }
 
     public function store(Request $request){
+        $request ->validate([
+            'role' => 'required|max:20'
+        ]);
         DB::table('role')->insert([
             'ROLE' => $request->role,
         ]);
-        return redirect('/role');
+        return redirect('/role')->with('tambah','Data berhasil ditambahkan');
     }
 
     public function edit($id){
@@ -33,9 +36,21 @@ class roleController extends Controller
         return view('edit.editRole',['role' => $role]);
     }
     public function update(Request $request){
+        $request ->validate([
+            'role' => 'required|max:20'
+        ]);
         DB::table('role')->where('ID_ROLE',$request->id)->update([
             'ROLE' => $request->role,
         ]);
-        return redirect('/role');
-    }  
+        return redirect('/role')->with('edit','Data berhasil diubah');
+    } 
+    public function hapus($id){
+        date_default_timezone_set('Asia/Jakarta');
+    	DB::table('role')->where('ID_ROLE',$id)->update([
+            'DELETED_AT' => date('Y-m-d H:i:s')
+        ]);
+ 
+    	return redirect('/role')->with('hapus','Data berhasil dihapus');
+    }
+ 
 }

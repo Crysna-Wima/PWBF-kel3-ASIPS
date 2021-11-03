@@ -321,194 +321,26 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!--tambah Role modal-->
-    <div class="modal fade" id="tambahRole" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
+    {{-- Hapus Modal --}}
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Role</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">Hapus</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
             <div class="modal-body">
-                <form action="/role/store" method="post">
-                    {{ csrf_field() }}
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Role</label>
-                        <input type="text" class="form-control" name="role" required="required" placeholder="Nama Role">
-                    </div>
+              <h5>Apakah anda yakin ingin menghapusnya?</h5>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-primary" value="Simpan Data">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger">Hapus</button>
             </div>
-        </form>
+          </div>
         </div>
-        </div>
-    </div>
-
-    <!--Tambah Kecamatan modal-->
-    <div class="modal fade" id="tambahKecamatan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Kecamatan</h5>
-            </div>
-            <div class="modal-body">
-                <form action="/kecamatan/store" method="post">
-                    {{ csrf_field() }}
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Nama Kecamatan</label>
-                        <input type="text" class="form-control" name="kecamatan" required="required" placeholder="Nama Kecamatan">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Created AT</label>
-                        <input type="datetime-local" class="form-control" name="created" required="required">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Updated AT</label>
-                        <input type="datetime-local" class="form-control" name="updated" required="required">
-                    </div>               
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Simpan Data">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!--Tambah Kelurahan modal-->
-    <div class="modal fade" id="tambahKelurahan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Kelurahan</h5>
-            </div>
-            <div class="modal-body">
-                <form action="/kelurahan/store" method="post">
-                    {{ csrf_field() }}
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">ID Kecamatan</label>
-                        <input type="number" class="form-control" name="id_kecamatan" required="required" placeholder="1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Nama Kelurahan</label>
-                        <input type="text" class="form-control" name="kelurahan" required="required" placeholder="Nama Kelurahan">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Created AT</label>
-                        <input type="datetime-local" class="form-control" name="created" required="required">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Updated AT</label>
-                        <input type="datetime-local" class="form-control" name="updated" required="required">
-                    </div>               
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Simpan Data">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-     <!--Tambah Posyandu modal-->
-     <div class="modal fade" id="tambahPosyandu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Posyandu</h5>
-            </div>
-            <div class="modal-body">
-                <form action="/posyandu/store" method="post">
-                    {{ csrf_field() }}
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">ID Kelurahan</label>
-                        <input type="number" class="form-control" name="kelurahan" required="required" placeholder="1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Nama Posyandu</label>
-                        <input type="text" class="form-control" name="nama" required="required" placeholder="Nama Posyandu">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Alamat Posyandu</label>
-                        <textarea class="form-control" name="alamat" required="required" placeholder="Alamat Posyandu"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Created AT</label>
-                        <input type="datetime-local" class="form-control" name="created" required="required">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Updated AT</label>
-                        <input type="datetime-local" class="form-control" name="updated" required="required">
-                    </div>               
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Simpan Data">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!--Tambah Balita modal-->
-    <div class="modal fade" id="tambahBalita" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Balita</h5>
-            </div>
-            <div class="modal-body">
-                <form action="/balita/store" method="post">
-                    {{ csrf_field() }}
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">ID Posyandu</label>
-                        <input type="number" class="form-control" name="posyandu" required="required" placeholder="1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Nama Balita</label>
-                        <input type="text" class="form-control" name="nama" required="required" placeholder="Nama Balita">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">NIK Orang Tua</label>
-                        <input class="form-control" name="NIK" maxlength="16" required="required">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Nama Orang Tua</label>
-                        <input type="text" class="form-control" name="Ortu" required="required" placeholder="Ortu">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label"> Tanggal lahir Balita</label>
-                        <input type="date" class="form-control" name="lahir" required="required">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Jenis Kelamin Balita</label><br>
-                        <input type="radio" name="jk" required="required" value="L">  Laki-Laki <br><input type="radio" name="jk" required="required" value="L">  Perempuan
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Status</label>
-                        <input type="number" class="form-control" name="Status" required="required">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Created AT</label>
-                        <input type="datetime-local" class="form-control" name="created" required="required">
-                    </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Updated AT</label>
-                        <input type="datetime-local" class="form-control" name="updated" required="required">
-                    </div>               
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Simpan Data">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+      </div>
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">

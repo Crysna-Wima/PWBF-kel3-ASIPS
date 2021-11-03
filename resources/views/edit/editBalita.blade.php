@@ -16,19 +16,19 @@
 				<input type="hidden" name="id" value="{{ $p->ID_BALITA }}"> <br/>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">ID Posyandu</label>
-					<input type="number" class="form-control" name="posyandu" required="required" placeholder="1" value="{{ $p->ID_POSYANDU }}">
+					<input type="number" class="form-control" name="posyandu" required="required" placeholder="1" value="{{ $p->ID_POSYANDU }}" max="{{ $jumlah }}">
 				</div>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">Nama Balita</label>
-					<input type="text" class="form-control" name="nama" required="required" placeholder="Nama Balita" value="{{ $p->NAMA_BALITA }}">
+					<input type="text" class="form-control" name="nama" required="required" placeholder="Nama Balita" value="{{ $p->NAMA_BALITA }}" maxlength="50">
 				</div>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">NIK Orang Tua</label>
-					<input type="text" class="form-control" name="NIK" required="required" placeholder="NIK Orang Tua" value="{{ $p->NIK_ORANG_TUA }}">
+					<input type="text" class="form-control" name="NIK" required="required" placeholder="NIK Orang Tua" value="{{ $p->NIK_ORANG_TUA }}" maxlength="16">
 				</div>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">Nama Orang Tua</label>
-					<input type="text" class="form-control" name="Ortu" required="required" placeholder="Nama Orang Tua" value="{{ $p->NAMA_ORANG_TUA }}">
+					<input type="text" class="form-control" name="Ortu" required="required" placeholder="Nama Orang Tua" value="{{ $p->NAMA_ORANG_TUA }}" maxlength="50">
 				</div>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">Tanggal Lahir Balita</label>
@@ -41,12 +41,8 @@
 				</div>
 				<div class="mb-3">
 					<label for="formGroupExampleInput" class="form-label">Status</label>
-					<input type="text" name="status" class="form-control" required="required" value="{{ $p->STATUS }}">
+					<input type="text" name="status" class="form-control" required="required" value="{{ $p->STATUS }}" maxlength="6">
 				</div>
-				<div class="mb-3">
-					<label for="formGroupExampleInput" class="form-label">Updated AT</label>
-					<input type="datetime-local" class="form-control" name="updated" required="required" value="{{ $p->UPDATED_AT }}">
-				</div>               
 				<div class="modal-footer">
 					<a href="/balita" class="btn btn-secondary">Kembali</a>
 					<input type="submit" class="btn btn-primary" value="Simpan Data">
